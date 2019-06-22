@@ -8,7 +8,7 @@ Download all of the files from this repository
 
 ## Usage
 
-Run the file titled MainTitleFile.py file to launch the game
+Run the file titled MainTitleFile.py to launch the game
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
