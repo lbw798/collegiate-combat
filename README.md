@@ -2,13 +2,13 @@
 
 Collegiate Combat is a fighting game written in python
 
-## Installation
+## Download/Installation
 
-Download the files from this repository
+Download the files and directories from this repository into the same local folder of your choice
 
 ## Usage
 
-Run the file titled MainTitleFile.py to launch the game
+Run the file titled MainTitleFile.py to launch the game and enjoy
 
 ## Author
 
