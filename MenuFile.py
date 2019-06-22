@@ -1,8 +1,9 @@
 '''
-Borrowed from Game.py which was created by Lukas Peraza
-    url: https://github.com/LBPeraza/Pygame-Asteroids
-
-Actually implements the game
+MenuFile
+- implements main menu
+- enables character selection to start game
+- enables options screen
+- enables credits screen
 
 '''
 import pygame
@@ -51,8 +52,8 @@ class Menu(CollegiateCombat):
         
         self.creditWidth, self.creditHeight = self.creditImages[0].get_size()
         
-        print("credit height =", self.creditHeight)
-        print("screen height =", self.height)
+        #print("credit height =", self.creditHeight)
+        #print("screen height =", self.height)
         
         
         self.isOptions = False
@@ -240,17 +241,17 @@ class Menu(CollegiateCombat):
             
             if ( x >= (self.mainRectX - self.mainRectBoarder) and x <= ( self.mainRectX + self.mainRectWidth + (2 * self.mainRectBoarder) ) ) and ( y >= (  self.playRectY - self.mainRectBoarder ) and y <= ( self.playRectY + self.mainRectHeight + (2 * self.mainRectBoarder) ) ):
                 CollegiateCombat.characterSelectClass = CharacterSelect
-                print(CollegiateCombat.characterSelectClass)
-                CharacterSelect(1200, 600).run()
-                print("clicked play")
+                #print(CollegiateCombat.characterSelectClass)
+                CharacterSelect(    ).run()
+                #print("clicked play")
                 
             if ( x >= (self.mainRectX - self.mainRectBoarder) and x <= ( self.mainRectX + self.mainRectWidth + (2 * self.mainRectBoarder) ) ) and ( y >= (  self.optionsRectY - self.mainRectBoarder ) and y <= ( self.optionsRectY + self.mainRectHeight + (2 * self.mainRectBoarder) ) ):
                 self.isOptions = True
-                print("clicked options")
+                #print("clicked options")
             
             if ( x >= (self.mainRectX - self.mainRectBoarder) and x <= ( self.mainRectX + self.mainRectWidth + (2 * self.mainRectBoarder) ) ) and ( y >= (  self.creditsRectY - self.mainRectBoarder ) and y <= ( self.creditsRectY + self.mainRectHeight + (2 * self.mainRectBoarder) ) ):
                 self.isCredits = True
-                print("clicked credits")
+                #print("clicked credits")
         
         # Options menu functionality:
         if self.isOptions and not self.isCredits:
@@ -259,13 +260,13 @@ class Menu(CollegiateCombat):
             if ( x >= (self.onRectX - self.onffRectBoarder) and x <= ( self.onRectX + self.onOffRectWidth + (2 * self.onffRectBoarder) ) ) and ( y >= (  self.onOffRectY - self.onffRectBoarder ) and y <= ( self.onOffRectY + self.onOffRectHeight + (2 * self.onffRectBoarder) ) ) and not CollegiateCombat.isMusicPlaying:
                 CollegiateCombat.isMusicPlaying = True
                 CollegiateCombat.playMusic()
-                print("music on")
+                #print("music on")
             
             # Turn music off
             if ( x >= (self.offRectX - self.onffRectBoarder) and x <= ( self.offRectX + self.onOffRectWidth + (2 * self.onffRectBoarder) ) ) and ( y >= (  self.onOffRectY - self.onffRectBoarder ) and y <= ( self.onOffRectY + self.onOffRectHeight + (2 * self.onffRectBoarder) ) ) and CollegiateCombat.isMusicPlaying:
                 CollegiateCombat.isMusicPlaying = False
                 CollegiateCombat.stopMusic()
-                print("music off")
+                #print("music off")
         
         # Back button functionality:
         if self.isOptions or self.isCredits:
@@ -349,7 +350,7 @@ class Menu(CollegiateCombat):
             moveSpace = 50
             self.moveTextCY = self.InGameTextOptionsMenuCY + 50
             for i in range(len(self.moveText)):
-                print( "self.moveTextCX: %d self.moveTextCY: %d self.button1TextCX: %d self.button2TextCX: %d" %(self.moveTextCX, self.moveTextCY, self.button1TextCX, self.button2TextCX) )
+                #print( "self.moveTextCX: %d self.moveTextCY: %d self.button1TextCX: %d self.button2TextCX: %d" %(self.moveTextCX, self.moveTextCY, self.button1TextCX, self.button2TextCX) )
                 DrawText.drawText(screen, self.moveText[i], self.moveTextCX, self.moveTextCY)
                 DrawText.drawText(screen, self.buttonText1[i], self.button1TextCX, self.moveTextCY)
                 DrawText.drawText(screen, self.buttonText2[i], self.button2TextCX, self.moveTextCY)

@@ -1,9 +1,7 @@
 '''
-Borrowed from Game.py which was created by Lukas Peraza
-    url: https://github.com/LBPeraza/Pygame-Asteroids
-
-Actually implements the game
-
+CharacterSelectFile
+- allows user to select characters
+- once selected moves onto map selection
 '''
 import pygame
 from CollegiateCombatFile import CollegiateCombat
@@ -18,6 +16,8 @@ class CharacterSelect(CollegiateCombat):
         CollegiateCombat.mode == "CharacterSelect"
         
         # Create icon and board sizes
+        wBackground, hBackground = self.width, self.height
+
         margin = 10
         self.iconImageWidth = 200
         self.iconImageHeight = 200
@@ -52,7 +52,7 @@ class CharacterSelect(CollegiateCombat):
         # Create a dictionary of characters
         
         self.characters = ["subzero", "scorpion", "raizen", "goku", "naruto", "sasuke"]
-        print("Num Characters: %d, NumImages: %d" %(len(self.characters), len(self.images)))
+        #print("Num Characters: %d, NumImages: %d" %(len(self.characters), len(self.images)))
         
         self.charBoard =    [   [{}, {}, {}],
                                 [{}, {}, {}]
@@ -71,8 +71,8 @@ class CharacterSelect(CollegiateCombat):
         self.imageRowRight = 0
         self.imageColRight = len(self.charBoard[0]) - 1
                 
-        for row in range(len(self.charBoard)):
-            print(self.charBoard[row])
+        #for row in range(len(self.charBoard)):
+            #print(self.charBoard[row])
                 
         for charLeft in self.charBoard[self.imageRowLeft][self.imageColLeft]:
             self.currentLeftCharacter = charLeft
@@ -150,15 +150,15 @@ class CharacterSelect(CollegiateCombat):
         for charRight in self.charBoard[self.imageRowRight][self.imageColRight]:
             self.currentRightCharacter = charRight
             self.currentRightImage = self.charBoard[self.imageRowRight][self.imageColRight][charRight]
-        print("Left=(%d, %d), Right=(%d, %d)" %(self.imageRowLeft, self.imageColLeft, self.imageRowRight, self.imageColRight))
+        #print("Left=(%d, %d), Right=(%d, %d)" %(self.imageRowLeft, self.imageColLeft, self.imageRowRight, self.imageColRight))
         
         if code == pygame.K_RETURN:
-            print("Starting Game! with Left:%s and Right:%s" %(self.currentLeftCharacter, self.currentRightCharacter))
+            #print("Starting Game! with Left:%s and Right:%s" %(self.currentLeftCharacter, self.currentRightCharacter))
             # Set the chosen characters
             CollegiateCombat.character1 = self.currentLeftCharacter
             CollegiateCombat.character2 = self.currentRightCharacter
             # Continue to next screen
-            BackgroundSelect(1200, 600).run()
+            BackgroundSelect().run()
     
     def timerFired(self, dt):
         pass

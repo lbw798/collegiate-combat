@@ -59,7 +59,7 @@ class BackgroundSelect(CollegiateCombat):
             self.images.append(image)
             self.selectedImages.append(selectedImage)
         
-        print("Num backgrounds: %d, NumImages: %d" %(len(self.backgrounds), len(self.images)))
+        #print("Num backgrounds: %d, NumImages: %d" %(len(self.backgrounds), len(self.images)))
         
         # Create a dictionary of backgrounds
         
@@ -78,8 +78,8 @@ class BackgroundSelect(CollegiateCombat):
         self.imageRow = 0
         self.imageCol = 0
                 
-        for row in range(len(self.backBoard)):
-            print(self.backBoard[row])
+        #for row in range(len(self.backBoard)):
+            #print(self.backBoard[row])
         
         for back in self.backBoard[self.imageRow][self.imageCol]:
             self.currentBackground = back
@@ -125,13 +125,13 @@ class BackgroundSelect(CollegiateCombat):
             self.currentImage = self.backBoard[self.imageRow][self.imageCol][back][1]
         
         if code == pygame.K_RETURN:
-            print("Starting Game! at %s" %self.currentBackground)
+            #print("Starting Game! at %s" %self.currentBackground)
             
             # Set the chosen backgrounds
             CollegiateCombat.gameBackground = self.currentBackground
             
             # Run the game
-            RunGame(1200, 600).run()
+            RunGame().run()
     
     def timerFired(self, dt):
         pass

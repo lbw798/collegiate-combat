@@ -228,7 +228,7 @@ class Character(CollegiateObject):
         self.specialCount = 30
         self.specialDamage = 50
         
-        print("Loaded Character")
+        #print("Loaded Character")
     
     def loseHealth(self, damage):
         if self.isBlock: self.sounds["block"].play()

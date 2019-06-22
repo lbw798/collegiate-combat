@@ -17,7 +17,7 @@ class CollegiateObject(pygame.sprite.Sprite):
         self.baseImage = image.copy()  # non-rotated version of image
         self.updateRect()
         
-        print("Loaded Object")
+        #print("Loaded Object")
 
     def updateRect(self):
         

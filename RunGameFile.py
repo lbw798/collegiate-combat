@@ -180,7 +180,7 @@ class RunGame(CollegiateCombat):
         if self.isPaused:
             if ( x >= (self.restartRectX - self.restartRectBoarder) and x <= ( self.restartRectX + self.restartRectWidth + (2 * self.restartRectBoarder) ) ) and ( y >= (  self.restartRectY - self.restartRectBoarder ) and y <= ( self.restartRectY + self.restartRectHeight + (2 * self.restartRectBoarder) ) ):
                 
-                RunGame(1200, 600).run()
+                RunGame().run()
 
     def keyPressed(self, code, mod, dt):
         
@@ -189,7 +189,7 @@ class RunGame(CollegiateCombat):
             self.isPaused = not self.isPaused
         
         if code == pygame.K_r:
-            RunGame(1200, 600).run()
+            RunGame().run()
         
         # Control Music
         if code == pygame.K_n:
@@ -202,7 +202,7 @@ class RunGame(CollegiateCombat):
         
         if code == pygame.K_t:
             self.isGameOver = False
-            CollegiateCombat.characterSelectClass(1200, 600).run()
+            CollegiateCombat.characterSelectClass().run()
         
         if not self.isGameOver and not self.isPaused:
             
@@ -242,8 +242,8 @@ class RunGame(CollegiateCombat):
             if self.timerFiredCounter > 0 and self.timerFiredCounter % self.fps == 0: 
                 self.timeCount += 1
 
-                print("Facing Left: Taking Damage:", self.characterLeft.isDamage, "Attacking:", self.characterLeft.isAttack)
-                print("Facing Right: Taking Damage:", self.characterRight.isDamage, "Attacking:", self.characterRight.isAttack)
+                #print("Facing Left: Taking Damage:", self.characterLeft.isDamage, "Attacking:", self.characterLeft.isAttack)
+                #print("Facing Right: Taking Damage:", self.characterRight.isDamage, "Attacking:", self.characterRight.isAttack)
                 
                 if self.characterLeft.isDamage:
                     self.characterLeft.damageCount -= 1
@@ -307,7 +307,7 @@ class RunGame(CollegiateCombat):
             self.damage = 0
             if pygame.sprite.collide_circle(self.characterLeft, self.characterRight):
                 if self.characterLeft.isPunch and self.characterLeft.punchCount == 20:
-                    print("Left Punch")
+                    #print("Left Punch")
                     self.characterLeft.isAttack = True
                     self.characterRight.isDamage = True
                     self.damage = self.characterLeft.punchDamage
@@ -316,7 +316,7 @@ class RunGame(CollegiateCombat):
                     self.characterRight.loseHealth(self.damage)
                     self.characterLeft.getEnergy()
                 if self.characterLeft.isKick and self.characterLeft.kickCount == 20:
-                    print("Left Kick")
+                    #print("Left Kick")
                     self.characterLeft.isAttack = True
                     self.characterRight.isDamage = True
                     self.damage = self.characterLeft.kickDamage
@@ -325,7 +325,7 @@ class RunGame(CollegiateCombat):
                     self.characterRight.loseHealth(self.damage)
                     self.characterLeft.getEnergy()
                 if self.characterRight.isPunch and self.characterRight.punchCount == 20:
-                    print("Right Punch")
+                    #print("Right Punch")
                     self.characterRight.isAttack = True
                     self.characterLeft.isDamage = True
                     self.damage = self.characterRight.punchDamage
@@ -334,7 +334,7 @@ class RunGame(CollegiateCombat):
                     self.characterLeft.loseHealth(self.damage)
                     self.characterRight.getEnergy()
                 if self.characterRight.isKick and self.characterRight.kickCount == 20:
-                    print("Right Kick")
+                    #print("Right Kick")
                     self.characterRight.isAttack = True
                     self.characterLeft.isDamage = True
                     self.damage = self.characterRight.kickDamage
@@ -345,7 +345,7 @@ class RunGame(CollegiateCombat):
             
             for specialLeft in self.characterLeftProjectiles:
                 if pygame.sprite.collide_circle(self.characterRight, specialLeft):
-                    print("Left Special")
+                    #print("Left Special")
                     self.characterLeft.isAttack = True
                     self.characterRight.isDamage = True
                     self.damage = self.characterLeft.specialDamage
@@ -356,7 +356,7 @@ class RunGame(CollegiateCombat):
             
             for specialRight in self.characterRightProjectiles:
                 if pygame.sprite.collide_circle(self.characterLeft, specialRight):
-                    print("Right Special")
+                    #print("Right Special")
                     self.characterRight.isAttack = True
                     self.characterLeft.isDamage = True
                     self.damage = self.characterRight.specialDamage
@@ -478,7 +478,7 @@ class RunGame(CollegiateCombat):
             screen.blit( self.gameOverImage, (0, 0) )
             
             if self.characterLeft.health > self.characterRight.health:
-                print(self.characterLeft.health, self.characterRight.health)
+                #print(self.characterLeft.health, self.characterRight.health)
                 self.winner = CollegiateCombat.character2
             else: self.winner = CollegiateCombat.character1
             

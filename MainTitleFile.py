@@ -1,9 +1,7 @@
 '''
-Borrowed from Game.py which was created by Lukas Peraza
-    url: https://github.com/LBPeraza/Pygame-Asteroids
-
-implements the title screen of 
-
+MainTitleFile
+- implements the title screen
+- initializes program
 '''
 import pygame
 from CollegiateCombatFile import CollegiateCombat
@@ -24,7 +22,6 @@ class MainTitle(CollegiateCombat):
         # Import and resize background image
         self.background = pygame.image.load("images/backgrounds/fireicefists.png")
 
-        wBackground, hBackground = self.background.get_size()
         wBackground, hBackground = self.width, self.height
         self.background = pygame.transform.scale( self.background, ( wBackground, hBackground) )
         
@@ -53,7 +50,7 @@ class MainTitle(CollegiateCombat):
         transitionTime = 100
         
         if self.timePassed >= transitionTime:
-            Menu(1200, 600).run()
+            Menu().run()
             # CharacterSelect(1200, 600).run()
 
     def redrawAll(self, screen):
@@ -71,4 +68,4 @@ class MainTitle(CollegiateCombat):
         # Draw My Credits
         DrawText.drawText(screen, self.NameText, self.NameTextCX, self.NameTextCY)
 
-MainTitle(1200, 600).run()
+MainTitle().run()

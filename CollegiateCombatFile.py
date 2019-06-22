@@ -82,7 +82,7 @@ class CollegiateCombat(object):
         ''' return whether a specific key is being held '''
         return self._keys.get(key, False)
 
-    def __init__(self, width=1200, height=600, fps=50, title="Collegiate Combat"):
+    def __init__(self, width=1370, height=690, fps=50, title="Collegiate Combat"):
         
         self.width = width
         self.height = height
