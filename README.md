@@ -4,7 +4,7 @@ Collegiate Combat is a fighting game written in python
 
 ## Installation
 
-Download all of the files from this repository
+Download the files from this repository
 
 ## Usage
 
