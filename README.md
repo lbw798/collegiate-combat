@@ -27,9 +27,9 @@ An executable game available through browser rather than tedious downloads/insta
 Lucky Wavai
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Currently, solely author contributions are accepted as an attempt to hone skills and knowledge 
 
-Please make sure to update tests as appropriate.
+For major problems, please open an issue to discuss what you would like to change
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
