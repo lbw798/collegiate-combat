@@ -19,7 +19,7 @@ def __init__(self, width=1370, height=690, fps=50, title="Collegiate Combat"):
 
 ## Coming Soon
 
-1. An executible game availaible through browser rather than tedious downloads/installation and instructions for start up
+An executible game availaible through browser rather than tedious downloads/installation and instructions for start up
 
 
 ## Author
